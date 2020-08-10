@@ -1,3 +1,4 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="sign_in_text_size">@dimen/_12sdp</dimen>
+    <dimen name="login_title_size">@dimen/_30sdp</dimen>
 </resources>
