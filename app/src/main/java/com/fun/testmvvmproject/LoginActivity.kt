@@ -1,25 +1,31 @@
 package com.`fun`.testmvvmproject
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.`fun`.testmvvmproject.other.activity.DashboardActivity
 import com.`fun`.testmvvmproject.utils.AppUtils
+import com.`fun`.testmvvmproject.utils.USER_EMAIL
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.content_login.*
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_login)
 
+
     }
 
-
-    public fun checkLoginButton(view: View) {
+    fun checkLoginButton(view: View) {
         if (isInfoValid()) {
+            var intent = Intent(this, DashboardActivity::class.java)
+            intent.putExtra(USER_EMAIL, edit_email.text.toString());
             Toasty.success(applicationContext, "Login Success", Toast.LENGTH_SHORT, false).show()
+            startActivity(intent)
         }
     }
 
