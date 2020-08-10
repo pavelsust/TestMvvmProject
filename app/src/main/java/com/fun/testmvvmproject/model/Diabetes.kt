@@ -11,8 +11,6 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 package com.`fun`.testmvvmproject.model
 
-import Labs
-import Medications
 import com.google.gson.annotations.SerializedName
 
 data class Diabetes (

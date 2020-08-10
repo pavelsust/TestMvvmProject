@@ -1,6 +1,5 @@
 
 package com.`fun`.testmvvmproject.model
-import MedicationsClasses
 import com.google.gson.annotations.SerializedName
 
 /*
