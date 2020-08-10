@@ -1,6 +1,7 @@
 package com.`fun`.testmvvmproject.other.activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -46,7 +47,9 @@ class DashboardActivity : AppCompatActivity() {
         })
 
         problemViewModel = ViewModelProviders.of(this).get(ProblemViewModel::class.java)
+        problemViewModel!!.init(applicationContext)
         problemViewModel!!.getProblem().observe(this, Observer {
+
             var result = it.problems[0].diabetes[0].medications[0].medicationsClasses[0]
 
             for (item in result.className) {

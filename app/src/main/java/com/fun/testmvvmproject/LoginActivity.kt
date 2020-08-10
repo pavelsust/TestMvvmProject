@@ -16,16 +16,21 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_login)
-
-
     }
 
     fun checkLoginButton(view: View) {
         if (isInfoValid()) {
-            var intent = Intent(this, DashboardActivity::class.java)
-            intent.putExtra(USER_EMAIL, edit_email.text.toString());
-            Toasty.success(applicationContext, "Login Success", Toast.LENGTH_SHORT, false).show()
-            startActivity(intent)
+            if (AppUtils.isEmailValid(edit_email.text.toString())) {
+                var intent = Intent(this, DashboardActivity::class.java)
+                intent.putExtra(USER_EMAIL, edit_email.text.toString());
+                Toasty.success(applicationContext, "Login Success", Toast.LENGTH_SHORT, false)
+                    .show()
+                startActivity(intent)
+            } else {
+                Toasty.error(applicationContext, "Email is not valid", Toast.LENGTH_SHORT, false)
+                    .show()
+                edit_email.setText("")
+            }
         }
     }
 

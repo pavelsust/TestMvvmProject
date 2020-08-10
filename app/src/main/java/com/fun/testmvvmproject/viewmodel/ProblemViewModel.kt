@@ -8,15 +8,16 @@ import androidx.lifecycle.ViewModel
 import com.`fun`.testmvvmproject.model.ProblemResponse
 import com.`fun`.testmvvmproject.repositry.ProblemRepository
 
-class ProblemViewModel(application: Application) : AndroidViewModel(application) {
+class ProblemViewModel : ViewModel() {
 
     private var problemRepository: ProblemRepository? = null
     private var problemResponse: MutableLiveData<ProblemResponse>? = null
 
-    init {
+   fun init(context: Context) : ProblemViewModel{
         problemRepository =
-            ProblemRepository(application.applicationContext).getInstance().getResponse()
+            ProblemRepository(context.applicationContext).getInstance().getResponse()
         problemResponse = problemRepository!!.getProblemResponse()
+       return this
     }
 
     fun getProblem(): MutableLiveData<ProblemResponse> {

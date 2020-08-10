@@ -9,11 +9,15 @@ android {
     defaultConfig {
         applicationId "com.fun.testmvvmproject"
         minSdkVersion 16
-        targetSdkVersion 30
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
+        testOptions.unitTests.includeAndroidResources = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    testOptions {
+        unitTests.includeAndroidResources = true
     }
 
     buildTypes {
@@ -65,4 +69,25 @@ dependencies {
     implementation "android.arch.lifecycle:runtime:1.1.1"
     // retrofit, gson`
     implementation 'com.google.code.gson:gson:2.6.2'
+    testImplementation 'io.mockk:mockk:1.10.0'
+
+
+
+    androidTestImplementation "android.arch.core:core-testing:$android_arch_core_testing"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$mockwebserver_version"
+    androidTestImplementation "org.koin:koin-test:$koin_version"
+
+    testImplementation "androidx.test.ext:junit:$junit_x_ext"
+    testImplementation "android.arch.core:core-testing:$android_arch_core_testing"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$mockwebserver_version"
+    testImplementation "org.koin:koin-test:$koin_version"
+    testImplementation "io.mockk:mockk:$mockk_version"
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$couroutines_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutines_adapter"
+    testImplementation 'androidx.test:core:1.0.0'
+    testImplementation 'org.mockito:mockito-core:1.10.19'
+
+    testImplementation "org.robolectric:robolectric:4.0.2"
+
 }

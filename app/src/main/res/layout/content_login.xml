@@ -114,6 +114,7 @@
         </LinearLayout>
 
         <com.fun.testmvvmproject.custom.button.LoginButton
+            android:id="@+id/login_button"
             android:layout_width="@dimen/_244sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_gravity="center_horizontal"
