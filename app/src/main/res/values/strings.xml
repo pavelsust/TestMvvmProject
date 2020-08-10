@@ -10,6 +10,7 @@
     <string name="passowrd">Password</string>
     <string name="forgot">Forgot Password</string>
     <string name="newUser">Not a Member yet? Sign Up here.</string>
+    <string name="dashboard">Dashboard</string>
 
 
 </resources>
